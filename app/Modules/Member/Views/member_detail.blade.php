@@ -32,6 +32,8 @@
                     <div class="col-lg-10 offset-lg-2">
                         <div class="row">
                             <div class='col-lg-2'><p>User</p></div><div class='col-lg-10'><p class='fw-bold'>{{ $member->user->id }}</p></div>
+									<div class='col-lg-2'><p>Statusmembership</p></div><div class='col-lg-10'><p class='fw-bold'>{{ $member->statusmembership->id }}</p></div>
+									<div class='col-lg-2'><p>No Anggota</p></div><div class='col-lg-10'><p class='fw-bold'>{{ $member->no_anggota }}</p></div>
 									<div class='col-lg-2'><p>Nama</p></div><div class='col-lg-10'><p class='fw-bold'>{{ $member->nama }}</p></div>
 									<div class='col-lg-2'><p>Email</p></div><div class='col-lg-10'><p class='fw-bold'>{{ $member->email }}</p></div>
 									<div class='col-lg-2'><p>Foto</p></div><div class='col-lg-10'><p class='fw-bold'>{{ $member->foto }}</p></div>

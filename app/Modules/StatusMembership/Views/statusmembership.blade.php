@@ -29,7 +29,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-9">
-                        <form action="{{ route('member.index') }}" method="get">
+                        <form action="{{ route('statusmembership.index') }}" method="get">
                             <div class="form-group col-md-3 has-icon-left position-relative">
                                 <input type="text" class="form-control" value="{{ request()->get('search') }}" name="search" placeholder="Search">
                                 <div class="form-control-icon"><i class="fa fa-search"></i></div>
@@ -37,7 +37,7 @@
                         </form>
                     </div>
                     <div class="col-3">  
-						{!! button('member.create', $title) !!}  
+						{!! button('statusmembership.create', $title) !!}  
                     </div>
                 </div>
                 @include('include.flash')
@@ -46,11 +46,7 @@
                         <thead>
                             <tr>
                                 <th width="15">No</th>
-								<td>Nama</td>
-								<td>Statusmembership</td>
-								<td>No Anggota</td>
-								<td>Email</td>
-								<td>Foto</td>
+                                <td>Status Membership</td>
 								
                                 <th width="20%">Aksi</th>
                             </tr>
@@ -60,24 +56,17 @@
                             @forelse ($data as $item)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-									<td>{{ $item->nama }}</td>
-									<td>{{ $item->Statusmembership->status_membership }}</td>
-									<td>{{ $item->no_anggota }}</td>
-									<td>{{ $item->email }}</td>
-									<td>{{ $item->foto }}</td>
+                                    <td>{{ $item->status_membership }}</td>
 									
                                     <td>
-										{!! button('member.show','', $item->id) !!}
-										{!! button('member.edit', $title, $item->id) !!}
-                                        {!! button('member.destroy', $title, $item->id) !!}
-                                        @if ($item->id_statusmembership != 'd966470c-2e9e-4ed9-a95c-be1503ff4dd1')
-                                            <a href="{{ route('member.aktivasi.update', $item->id) }}" class="btn btn-outline-success mt-1">Aktifkan Member</a>
-                                        @endif
+										{!! button('statusmembership.show','', $item->id) !!}
+										{!! button('statusmembership.edit', $title, $item->id) !!}
+                                        {!! button('statusmembership.destroy', $title, $item->id) !!}
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="8" class="text-center"><i>No data.</i></td>
+                                    <td colspan="3" class="text-center"><i>No data.</i></td>
                                 </tr>
                             @endforelse
                         </tbody>

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Modules\User\Models\User;
+use App\Modules\Statusmembership\Models\Statusmembership;
 
 
 class Member extends Model
@@ -20,6 +21,9 @@ class Member extends Model
 
 	public function user(){
 		return $this->belongsTo(User::class,"id_user","id");
+	}
+public function statusmembership(){
+		return $this->belongsTo(Statusmembership::class,"id_statusmembership","id");
 	}
 
 }

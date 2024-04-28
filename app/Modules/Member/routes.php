@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Modules\Member\Controllers\MemberController;
 
 Route::controller(MemberController::class)->middleware(['web','auth'])->name('member.')->group(function(){
+	// route custom
+	Route::get('/member/aktivasi/{id_member}', 'aktivasi')->name('aktivasi.update');
+
+
 	Route::get('/member', 'index')->name('index');
 	Route::get('/member/data', 'data')->name('data.index');
 	Route::get('/member/create', 'create')->name('create');

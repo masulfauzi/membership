@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Permission;
+use App\Modules\Member\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,17 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard');
+        // dd(session()->get('active_role')['id']);
+
+        if(session()->get('active_role')['id'] == 'b082f47e-16ee-4adb-a96e-da785e230cc3')
+        {
+            return view('member_dashboard');
+        }
+        else{
+            return view('dashboard');
+        }
+
+
     }
 
     public function changeRole($id_role)
