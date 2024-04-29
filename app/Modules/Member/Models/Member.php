@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Modules\User\Models\User;
-use App\Modules\Statusmembership\Models\StatusMembership;
+use App\Modules\StatusMembership\Models\StatusMembership;
 
 
 class Member extends Model
