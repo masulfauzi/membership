@@ -39,6 +39,7 @@ class StatusMembershipController extends Controller
 		
 		$data['forms'] = array(
 			'status_membership' => ['Status Membership', Form::text("status_membership", old("status_membership"), ["class" => "form-control","placeholder" => ""]) ],
+			'urutan' => ['Urutan', Form::text("urutan", old("urutan"), ["class" => "form-control","placeholder" => "n"]) ],
 			
 		);
 
@@ -50,11 +51,13 @@ class StatusMembershipController extends Controller
 	{
 		$this->validate($request, [
 			'status_membership' => 'required',
+			'urutan' => 'required',
 			
 		]);
 
 		$statusmembership = new StatusMembership();
 		$statusmembership->status_membership = $request->input("status_membership");
+		$statusmembership->urutan = $request->input("urutan");
 		
 		$statusmembership->created_by = Auth::id();
 		$statusmembership->save();
@@ -80,6 +83,7 @@ class StatusMembershipController extends Controller
 		
 		$data['forms'] = array(
 			'status_membership' => ['Status Membership', Form::text("status_membership", $statusmembership->status_membership, ["class" => "form-control","placeholder" => "", "id" => "status_membership"]) ],
+			'urutan' => ['Urutan', Form::text("urutan", $statusmembership->urutan, ["class" => "form-control","placeholder" => "n", "id" => "urutan"]) ],
 			
 		);
 
@@ -92,11 +96,13 @@ class StatusMembershipController extends Controller
 	{
 		$this->validate($request, [
 			'status_membership' => 'required',
+			'urutan' => 'required',
 			
 		]);
 		
 		$statusmembership = StatusMembership::find($id);
 		$statusmembership->status_membership = $request->input("status_membership");
+		$statusmembership->urutan = $request->input("urutan");
 		
 		$statusmembership->updated_by = Auth::id();
 		$statusmembership->save();

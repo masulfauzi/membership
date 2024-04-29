@@ -47,6 +47,7 @@
                             <tr>
                                 <th width="15">No</th>
                                 <td>Status Membership</td>
+								<td>Urutan</td>
 								
                                 <th width="20%">Aksi</th>
                             </tr>
@@ -57,6 +58,7 @@
                                 <tr>
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $item->status_membership }}</td>
+									<td>{{ $item->urutan }}</td>
 									
                                     <td>
 										{!! button('statusmembership.show','', $item->id) !!}
@@ -66,7 +68,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="3" class="text-center"><i>No data.</i></td>
+                                    <td colspan="4" class="text-center"><i>No data.</i></td>
                                 </tr>
                             @endforelse
                         </tbody>

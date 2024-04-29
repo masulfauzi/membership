@@ -11,11 +11,14 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // dd(session()->get('active_role')['id']);
+        // dd(session()->all());
+        // dd(Auth::user());
 
         if(session()->get('active_role')['id'] == 'b082f47e-16ee-4adb-a96e-da785e230cc3')
         {
-            return view('member_dashboard');
+            $data['member'] = Member::find(session()->get('id_member'));
+
+            return view('member_dashboard', $data);
         }
         else{
             return view('dashboard');

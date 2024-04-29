@@ -60,7 +60,7 @@ class RegisteredUserController extends Controller
         $member->id_user = $id_user;
         $member->nama = $request->name;
         $member->email = $request->email;
-        $member->id_statusmembership = '23e99289-d07f-484b-8cd7-1b06d0834375';
+        $member->id_statusmembership = 'f273731c-9a0e-4452-b429-2592ecd75e87';
         $member->created_by = Auth::id();
         $member->save();
 

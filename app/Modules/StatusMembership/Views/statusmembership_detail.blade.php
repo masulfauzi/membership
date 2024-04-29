@@ -32,6 +32,7 @@
                     <div class="col-lg-10 offset-lg-2">
                         <div class="row">
                             <div class='col-lg-2'><p>Status Membership</p></div><div class='col-lg-10'><p class='fw-bold'>{{ $statusmembership->status_membership }}</p></div>
+									<div class='col-lg-2'><p>Urutan</p></div><div class='col-lg-10'><p class='fw-bold'>{{ $statusmembership->urutan }}</p></div>
 									
                         </div>
                     </div>

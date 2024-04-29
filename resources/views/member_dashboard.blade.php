@@ -27,12 +27,12 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex justify-content-center align-items-center flex-column">
-                            <div class="avatar avatar-2xl">
-                                <img src="./assets/compiled/jpg/2.jpg" alt="Avatar">
+                            <div class="">
+                                <img src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png" alt="Avatar" width="200px">
                             </div>
 
-                            <h3 class="mt-3">John Doe</h3>
-                            <p class="text-small">Junior Software Engineer</p>
+                            <h3 class="mt-3">{{ $member->nama }}</h3>
+                            {{-- <p class="text-small">Junior Software Engineer</p> --}}
                         </div>
                     </div>
                 </div>
@@ -42,31 +42,24 @@
                     <div class="card-body">
                         <form action="#" method="get">
                             <div class="form-group">
+                                <label for="name" class="form-label">Nomor Anggota</label>
+                                <input type="text" name="name" id="name" class="form-control"
+                                    placeholder="Nomor Anggota" value="{{ $member->no_anggota }}">
+                            </div>
+                            <div class="form-group">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" name="name" id="name" class="form-control"
-                                    placeholder="Your Name" value="John Doe">
+                                    placeholder="Your Name" value="{{ $member->nama }}">
                             </div>
                             <div class="form-group">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="text" name="email" id="email" class="form-control"
-                                    placeholder="Your Email" value="john.doe@example.net">
+                                    placeholder="Your Email" value="{{ $member->email }}">
                             </div>
                             <div class="form-group">
-                                <label for="phone" class="form-label">Phone</label>
-                                <input type="text" name="phone" id="phone" class="form-control"
-                                    placeholder="Your Phone" value="083xxxxxxxxx">
-                            </div>
-                            <div class="form-group">
-                                <label for="birthday" class="form-label">Birthday</label>
-                                <input type="date" name="birthday" id="birthday" class="form-control"
-                                    placeholder="Your Birthday">
-                            </div>
-                            <div class="form-group">
-                                <label for="gender" class="form-label">Gender</label>
-                                <select name="gender" id="gender" class="form-control">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
+                                <label for="phone" class="form-label">Upload Foto</label>
+                                <input type="file" name="phone" id="phone" class="form-control"
+                                    placeholder="Your Phone">
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Save Changes</button>

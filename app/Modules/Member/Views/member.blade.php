@@ -70,7 +70,7 @@
 										{!! button('member.show','', $item->id) !!}
 										{!! button('member.edit', $title, $item->id) !!}
                                         {!! button('member.destroy', $title, $item->id) !!}
-                                        @if ($item->id_statusmembership != 'd966470c-2e9e-4ed9-a95c-be1503ff4dd1')
+                                        @if ($item->id_statusmembership != '4f18de6e-5cf9-4bdc-baf7-488f72c059d5')
                                             <a href="{{ route('member.aktivasi.update', $item->id) }}" class="btn btn-outline-success mt-1">Aktifkan Member</a>
                                         @endif
                                     </td>

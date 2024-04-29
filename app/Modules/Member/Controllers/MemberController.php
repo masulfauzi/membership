@@ -120,7 +120,7 @@ class MemberController extends Controller
 		$no_anggota = rand(111111, 999999);
 
 		$member = Member::find($id);
-		$member->id_statusmembership = 'd966470c-2e9e-4ed9-a95c-be1503ff4dd1';
+		$member->id_statusmembership = '4f18de6e-5cf9-4bdc-baf7-488f72c059d5';
 		$member->no_anggota = $no_anggota;
 		$member->save();
 

@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Helpers\Permission;
+use App\Modules\Member\Models\Member;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Queue\InteractsWithQueue;
@@ -44,11 +45,23 @@ class LogSuccessfullLogin
                                 return [$item['module'] => $item->only(['create', 'read', 'show', 'update', 'delete', 'show_menu'])];
                             });
 
+
+            // get detail member
+            $member = Member::where('id_user', Auth::user()->id)->first();
+
+            if($member)
+            {
+                session()->put('id_member',$member->id);   
+            }
+
+            // dd($member->id);
+            // dd(Auth::user()->id);
+
             // store to session
             session(['menus' => $menus]);
             session(['roles' => $roles->pluck('role', 'id')->all()]);
             session(['privileges' => $privileges->all()]);
-            session(['active_role' => $active_role]);      
+            session(['active_role' => $active_role]);   
         } catch (\Throwable $th) {
             $this->logout();
         }
