@@ -6,6 +6,9 @@ use App\Helpers\Permission;
 use App\Modules\Member\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redis;
+
+use function Ramsey\Uuid\v1;
 
 class DashboardController extends Controller
 {
@@ -25,6 +28,13 @@ class DashboardController extends Controller
         }
 
 
+    }
+
+    public function welcome(Request $request)
+    {
+        $data['member'] = Member::all();
+
+        return view('welcome', $data);
     }
 
     public function changeRole($id_role)
