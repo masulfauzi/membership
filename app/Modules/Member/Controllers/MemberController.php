@@ -37,6 +37,14 @@ class MemberController extends Controller
 		return view('Member::member', array_merge($data, ['title' => $this->title]));
 	}
 
+	public function list_member(Request $request)
+	{
+		$data['data'] = Member::all();
+
+		$this->log($request, 'melihat halaman manajemen data '.$this->title);
+		return view('Member::list_member', array_merge($data, ['title' => $this->title]));
+	}
+
 	public function create(Request $request)
 	{
 		$ref_users = Users::all()->pluck('name','id');

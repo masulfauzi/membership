@@ -6,6 +6,7 @@ use App\Modules\Member\Controllers\MemberController;
 Route::controller(MemberController::class)->middleware(['web','auth'])->name('member.')->group(function(){
 	// route custom
 	Route::get('/member/aktivasi/{id_member}', 'aktivasi')->name('aktivasi.update');
+	Route::get('/member/list', 'list_member')->name('list.show');
 
 
 	Route::get('/member', 'index')->name('index');
